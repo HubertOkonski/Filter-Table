@@ -1,0 +1,239 @@
+.table-container {
+  width: -webkit-fill-available;
+}
+.table {
+  position: relative;
+}
+.App {
+  padding: 4vw;
+  height: 100vh;
+}
+.table td,
+.table th {
+  font-weight: 500;
+}
+.search-panel-container {
+  padding: 0 2rem;
+  width: 30%;
+  min-width: 300px;
+  max-width: 500px;
+}
+.main {
+  display: flex;
+  padding: 0rem;
+}
+.MuiSlider-root {
+  color: #454d55 !important;
+}
+.form-control:focus {
+  border: none !important;
+  box-shadow: #72777ca6 0 0 0 0.2rem !important;
+}
+input {
+  background: transparent !important;
+}
+.add-person-form {
+  border-top: 1px solid rgb(214, 214, 214);
+  border-bottom: 1px solid rgb(214, 214, 214);
+  display: flex;
+  padding: 1rem 0;
+}
+.add-person-form input:nth-child(2n) {
+  margin: 0 1rem;
+}
+.add-button {
+  padding: 0.375rem 0.75rem;
+}
+.logo {
+  font-family: Comfortaa;
+  padding: 1rem;
+  font-size: 3rem;
+}
+.summary {
+  text-align: center;
+  padding: 1rem;
+}
+.secondLogoPart {
+  margin-left: 2.75rem;
+}
+.message {
+  position: fixed;
+  top: 0rem;
+  left: 25%;
+  text-align: center;
+  width: 50%;
+  border-radius: 11px;
+  background: #ef2d48;
+  padding: 0.65vw;
+  z-index: 99;
+  color: white;
+  box-shadow: #ef2d48 0 0 8px;
+  animation: disappearing infinite 5s linear;
+}
+
+.control {
+  font-family: arial;
+  display: block;
+  position: relative;
+  padding-left: 29px;
+  margin-bottom: 5px;
+  padding-top: 3px;
+  cursor: pointer;
+  font-size: 16px;
+}
+.control input {
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+}
+.control_indicator {
+  position: absolute;
+  top: 2px;
+  left: 0;
+  height: 20px;
+  width: 20px;
+  background: #e6e6e6;
+  border: 0px solid #000000;
+  border-radius: 0px;
+}
+.control:hover input ~ .control_indicator,
+.control input:focus ~ .control_indicator {
+  background: #cccccc;
+}
+.summary p {
+  font-weight: 500 !important;
+}
+.control input:checked ~ .control_indicator {
+  background: #2e2627;
+}
+.control:hover input:not([disabled]):checked ~ .control_indicator,
+.control input:checked:focus ~ .control_indicator {
+  background: #2e2627;
+}
+.control input:disabled ~ .control_indicator {
+  background: #e6e6e6;
+  opacity: 0.6;
+  pointer-events: none;
+}
+.control_indicator:after {
+  box-sizing: unset;
+  content: "";
+  position: absolute;
+  display: none;
+}
+.control input:checked ~ .control_indicator:after {
+  display: block;
+}
+.control-checkbox .control_indicator:after {
+  left: 8px;
+  top: 4px;
+  width: 3px;
+  height: 8px;
+  border: solid #ffffff;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+.control-checkbox input:disabled ~ .control_indicator:after {
+  border-color: #7b7b7b;
+}
+.control-checkbox .control_indicator::before {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 4.5rem;
+  height: 4.5rem;
+  margin-left: -1.3rem;
+  margin-top: -1.3rem;
+  background: #686868;
+  border-radius: 3rem;
+  opacity: 0.6;
+  z-index: 99999;
+  transform: scale(0);
+}
+@keyframes s-ripple {
+  0% {
+    transform: scale(0);
+  }
+  20% {
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1);
+  }
+}
+@keyframes s-ripple-dup {
+  0% {
+    transform: scale(0);
+  }
+  30% {
+    transform: scale(1);
+  }
+  60% {
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1);
+  }
+}
+.control-checkbox input + .control_indicator::before {
+  animation: s-ripple 250ms ease-out;
+}
+.control-checkbox input:checked + .control_indicator::before {
+  animation-name: s-ripple-dup;
+}
+@media screen and (max-width: 1023px) {
+  .App {
+    height: 100%;
+    padding: 10px;
+  }
+  .message {
+    padding: 12px;
+    left: 12.5%;
+    width: 75%;
+    top: 15px;
+  }
+  .summary {
+    padding: 1rem;
+    text-align: center;
+    font-size: 16px;
+  }
+  .summary {
+    font-weight: 500;
+  }
+  .main {
+    flex-direction: column;
+    padding: 5px;
+  }
+  .add-person-form input:nth-child(2n) {
+    margin: 10px 0;
+  }
+  .workers-container {
+    overflow: scroll;
+    width: 100%;
+  }
+  .search-panel-container {
+    max-width: unset;
+    width: 100%;
+  }
+  .table-container {
+    width: 100%;
+  }
+  .table td,
+  .table th {
+    padding: 0.75em 0.15rem !important;
+    font-weight: 100;
+  }
+  .add-person-form {
+    flex-direction: column;
+  }
+  .add-person-form input {
+    margin: 0.45rem 0;
+  }
+  .logo {
+    font-size: 2.25rem;
+  }
+}
