@@ -31,7 +31,7 @@ function SearchPanel(props) {
     let lastItem = defaultWorkers[defaultWorkers.length - 1].dzial;
     let formDataBranchCpy = [...formData.branch];
     let branchArray = [];
-    defaultWorkers.map((person) => {
+    defaultWorkers.forEach((person) => {
       branchArray.push(person.dzial);
     });
     if (branchArray.indexOf(lastItem) === branchArray.length - 1) {

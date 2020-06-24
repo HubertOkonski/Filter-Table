@@ -13,7 +13,7 @@ function Summary(props) {
   };
   const fillArrayWithEarnings = (branchArray) => {
     let resultArray = [];
-    branchArray.map((branch) => {
+    branchArray.forEach((branch) => {
       let branchEarnings = 0;
       props.defaultWorkers.forEach((worker) => {
         if (branch === worker.dzial)
