@@ -19,8 +19,8 @@ function Checkbox(props) {
   };
   return (
     <>
-      <div class="control-group">
-        <label class="control control-checkbox">
+      <div className="control-group">
+        <label className="control control-checkbox">
           {props.branch}
           <input
             type="checkbox"
@@ -30,7 +30,7 @@ function Checkbox(props) {
             id={props.branch}
             onChange={(e) => handleChange(e, props.branch)}
           />
-          <div class="control_indicator"></div>
+          <div className="control_indicator"></div>
         </label>
       </div>
     </>

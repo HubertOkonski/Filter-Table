@@ -10,6 +10,7 @@ function List(props) {
   useEffect(() => {
     if (props.filtredWorkersArray.length >= 9)
       heightRef.current.height = nodeRef.current.offsetHeight;
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [props.defaultWorkers]);
   const nodeRef = useRef(null);
   const [newPersonData, setNewPersonData] = useState({
@@ -66,9 +67,9 @@ function List(props) {
               <th>wynagrodzenie</th>
             </tr>
           </tbody>
-          {props.filtredWorkersArray.map((person) => {
+          {props.filtredWorkersArray.map((person,index) => {
             return (
-              <tbody>
+              <tbody key={index}>
                 <tr>
                   <th>{person.imie}</th>
                   <th>{person.nazwisko}</th>

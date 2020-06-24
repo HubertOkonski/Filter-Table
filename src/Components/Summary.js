@@ -34,14 +34,15 @@ function Summary(props) {
   };
   useEffect(() => {
     sumEarnings();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [props.defaultWorkers]);
 
   return (
     <>
       <h4>Podsumowanie</h4>
-      {summaryEarnings.map((branch) => {
+      {summaryEarnings.map((branch,index) => {
         return (
-          <p>
+          <p key={index}>
             {branch.name} : {branch.value} PLN
           </p>
         );

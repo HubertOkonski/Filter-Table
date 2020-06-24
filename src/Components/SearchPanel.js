@@ -49,6 +49,7 @@ function SearchPanel(props) {
         branch: branchArrayUpdate(defaultWorkers),
       }));
     }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [defaultWorkers]);
 
   function searchFilter(worker) {
@@ -92,6 +93,7 @@ function SearchPanel(props) {
     filteredTable = filteredTable.filter(earningsFilter);
     filteredTable = filteredTable.filter(branchFilter);
     setWorkersList(filteredTable);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [formData]);
 
   const handleSearchChange = (event) => {
@@ -108,12 +110,13 @@ function SearchPanel(props) {
   };
 
   const branchCheckboxGenerator = (array) => {
-    return array.map((branch) => {
+    return array.map((branch,index) => {
       return (
         <CheckboxComponent
           branch={branch}
           setFormData={setFormData}
           formData={formData}
+          key={index}
         />
       );
     });
